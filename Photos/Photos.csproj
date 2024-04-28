@@ -5,12 +5,25 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\back.png" />
+    <None Remove="Icons\pause.png" />
+    <None Remove="Icons\play.png" />
+    <None Remove="Icons\right.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DevExpress.Data" Version="23.2.5" />
-    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
-    <PackageReference Include="OpenDialog" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\back.png" />
+    <Resource Include="Icons\pause.png" />
+    <Resource Include="Icons\play.png" />
+    <Resource Include="Icons\right.png" />
   </ItemGroup>
 
 </Project>
