@@ -3,25 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Photos"
+        xmlns:local="clr-namespace:Photos" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Photos" Height="450" Width="700" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Photos" Height="450" Width="700" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Icon="Icons/picture.png"
+        >
+    <Window.Resources>
+        <sys:Double x:Key="imageSize">150</sys:Double>
+    </Window.Resources>
+    
+
     <Grid>
         <Menu >
             <MenuItem Header="File" >
-                <MenuItem Header="Open" Click="MenuItem_Click"></MenuItem>
-                <MenuItem Header="Save"></MenuItem>
-                <MenuItem Header="Save as" ></MenuItem>
-                <MenuItem Header="Exit" ></MenuItem>
+                <MenuItem Name="Open" Header="Open" Click="AddFolderMenuItem_Click"></MenuItem>
+                <MenuItem Header="Save" Click="SaveMenyuItem_Click"></MenuItem>
+                <MenuItem Header="Save as" Click="SaveAsMenyuItem_Click" ></MenuItem>
+                <MenuItem Header="Exit" Click="ExitMenyuItem_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit" >
-                <MenuItem Header="Add File"></MenuItem>
-                <MenuItem Header="Add Folder"></MenuItem>
+                <MenuItem Header="Add File" Click="AddFileMenyuItem_Click"></MenuItem>
+                <MenuItem Header="Add Folder" Click="AddFolderMenuItem_Click    "></MenuItem>
             </MenuItem>
             <MenuItem Header="View" >
-                <RadioButton>Tiles</RadioButton>
-                <RadioButton>Small icons</RadioButton>
-                <RadioButton>Details</RadioButton>
+                <RadioButton x:Name="Tiles" Checked = "ViewMenuItem_Checked">Tiles</RadioButton>
+                <RadioButton x:Name="Small" Checked="ViewMenuItem_Checked">Small icons</RadioButton>
+                <RadioButton IsChecked="True" x:Name="Details">Details (Default)</RadioButton>
                     
             </MenuItem>
             <MenuItem Header="About" >
@@ -32,13 +39,14 @@
         <ListView Name="Photos" Margin="0,23,0,0" MouseDoubleClick="Photos_MouseDoubleClick">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel Orientation="Horizontal" Height="auto"  Margin="5"  />
+                    <WrapPanel x:Name="WrpPanelPhotos" Orientation="Vertical" Height="auto"  Margin="5"  />
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding}" Height="80" Width="80" Margin="5"/>
+                    <Image x:Name="ImageListView" Source="{Binding}" 
+                           Height="{DynamicResource imageSize}" Width="{DynamicResource imageSize}" Margin="5"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

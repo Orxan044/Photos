@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Photos"
         mc:Ignorable="d"
-        Title="Gallery" Height="401" Width="700" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Gallery" Height="401" Width="700" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Icon="Icons/photos-editor.png">
     <Grid Width="700" Height="401">
         <Button VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="60" Background="Transparent" Click="BackBtn_Click">
             <Image Source="Icons/back.png"></Image>

@@ -10,7 +10,10 @@
 
   <ItemGroup>
     <None Remove="Icons\back.png" />
+    <None Remove="Icons\open.png" />
     <None Remove="Icons\pause.png" />
+    <None Remove="Icons\photos-editor.png" />
+    <None Remove="Icons\picture.png" />
     <None Remove="Icons\play.png" />
     <None Remove="Icons\right.png" />
   </ItemGroup>
@@ -21,7 +24,10 @@
 
   <ItemGroup>
     <Resource Include="Icons\back.png" />
+    <Resource Include="Icons\open.png" />
     <Resource Include="Icons\pause.png" />
+    <Resource Include="Icons\photos-editor.png" />
+    <Resource Include="Icons\picture.png" />
     <Resource Include="Icons\play.png" />
     <Resource Include="Icons\right.png" />
   </ItemGroup>
